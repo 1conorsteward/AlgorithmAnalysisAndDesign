@@ -1,0 +1,23 @@
+What was the problem you were solving in the projects for this course?
+    In the analysis paper attached to this project you will find a detailed analysis of various data structures that includes their benefits, shortcomings, runtime complexities, and an overview of how to utilize each one. There is a short CSV file containing a list of courses and the prerequisites for each course. The problem we were to solve was to store this file within the best data structure for organizing and printing the information. A hash table had the best overall flexibility, maintainability, and runtime so this project was completed in a hash table.
+How did you approach the problem? Consider why data structures are important to understand.
+    Understanding the users needs was the initial step. The user needed a data structure that was easily manageable and fast for organizing and printing information. After writing the pseudocode for three different data structures and the users menu it was clear that a hash table would be ideal for the users requirements. Hash Table provides the fastest time complexity for both search and insertion operations, with O(1) time for both. This is critical when managing a large set of courses where lookups for course information will be frequent. In contrast, Vector requires O(n) time for search and could be inefficient as the number of courses grows. Similarly, a Binary Search Tree only offers O(log n) time in the best-case or balanced scenario, and O(n) in the worst case (unbalanced tree). Although Hash Table scales well with larger datasets while Vector would slow down as the number of courses grows, and Binary Search Tree might become unbalanced without careful management, the hash table continues to perform efficiently. Since courses are identified by a unique course number, hash functions can distribute the course numbers uniformly across the table, minimizing collisions. Since the primary focus of the system is on fast course lookup and retrieval, where sorting is not necessarily required, the Hash Table allows direct access to course information based on a unique key without the need for maintaining a sorted order. If the system occasionally requires sorted output, sorting can be done as a secondary operation. However, the primary requirement is quick lookups and updates, which the Hash Table handles best. While Hash Tables require some extra memory for handling collisions the trade-off is the performance gains on lookups and insertions. Vector is space-efficient but fails in lookup speed, while Binary Search Tree requires additional pointers, leading to increased memory usage compared to hash tables. By carefully choosing a good hash function, collisions in the Hash Table can be minimized. Even in cases where collisions occur, the hash table's performance will still be competitive, with operations degrading to O(n) only in rare cases. Given the course data structure hash collisions are unlikely to be frequent.
+How did you overcome any roadblocks you encountered while going through the activities or project?
+    I have worked extensively with terminal-view menus before, so that did not pose much of a difficulty, but storing the data within a hash table took research on correct implementation. Below is the pseudocode designed for this very purpose.
+    
+    FOR each line in 'courseLines' // Executes n times
+    SPLIT the line by commas into 'tokens' // O(1)
+    CREATE 'course' object // O(1)
+    SET 'course.courseNumber' to tokens[0] // O(1)
+    SET 'course.courseName' to tokens[1] // O(1)
+
+    IF tokens.length > 2
+    FOR each token from the third element onward // O(m)
+    ADD token to 'course.prerequisites' // O(1)
+    CALL 'courseHashTable.Insert(course.courseNumber, course)' // O(1)
+
+How has your work on this project expanded your approach to designing software and developing programs?
+    Implementing the users needs and taking their priorities into consideration helped me gain more experience in choosing between differing software options to best serve the user. The detailed analysis of algorithm efficiencies gained me insight into how differing data structures can make a significant difference in runtimes and useability, and choosing the right one for the job helped me align priorities with practicality.
+
+How has your work on this project evolved the way you write programs that are maintainable, readable, and adaptable?
+    Creating code that is maintainable, readable, and adaptable requires extensive commenting, well organized code, and detailed documentation on why certain decisions have been made. All of this work added to my experience in analyzing a situation and delivering a best choice outcome for my shareholder.
