@@ -1,3 +1,7 @@
+Conor Steward
+1conorsteward@gmail.com
+10/21/24
+
 What was the problem you were solving in the projects for this course?
     In the analysis paper attached to this project you will find a detailed analysis of various data structures that includes their benefits, shortcomings, runtime complexities, and an overview of how to utilize each one. There is a short CSV file containing a list of courses and the prerequisites for each course. The problem we were to solve was to store this file within the best data structure for organizing and printing the information. A hash table had the best overall flexibility, maintainability, and runtime so this project was completed in a hash table.
 How did you approach the problem? Consider why data structures are important to understand.
